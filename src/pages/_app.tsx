@@ -13,7 +13,7 @@ dayjs.locale('zh-cn');
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ConfigProvider locale={zhCN}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </ConfigProvider>
   );
 }

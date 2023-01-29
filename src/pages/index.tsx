@@ -1,7 +1,10 @@
 import React from 'react';
+import type { NextPage } from 'next';
 
-const Index: React.FC = () => {
-  return <div>Index</div>;
+import Index from '@/views/Index';
+
+const IndexPage: NextPage = () => {
+  return <Index />;
 };
 
-export default Index;
+export default IndexPage;
