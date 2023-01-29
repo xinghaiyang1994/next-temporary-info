@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env STAGE=local next dev",
+    "check": "node scripts/checkInfoFile.js",
+    "dev": "npm run check && cross-env STAGE=local next dev",
     "build": "cross-env STAGE=prod next build",
-    "start": "cross-env STAGE=prod next start",
+    "start": "npm run check &&  cross-env STAGE=prod next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.1",
+    "fs-extra": "^11.1.0",
     "next-with-less": "^2.0.5",
     "postcss-less": "^6.0.0",
     "prettier": "^2.8.3",

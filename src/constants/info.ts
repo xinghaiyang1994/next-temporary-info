@@ -6,6 +6,10 @@ export interface IInfo {
   title: string;
   /** 内容 */
   content: string;
+  /** 创建时间 */
+  createTime: number;
+  /** 过期时间 */
+  expirationTime: number;
 }
 
 export interface ICreateForm extends Pick<IInfo, 'title' | 'content'> {
@@ -24,3 +28,8 @@ export interface IPostAddInfoReq
 export interface IGetInfoListReq {
   current: number;
 }
+
+export const PAGE_SIZE = 10;
+
+/** 永久不过期的过期时间 */
+export const EXPIRATION_TIME_PERMANENT = 9999999999999;

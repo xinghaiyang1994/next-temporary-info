@@ -2,11 +2,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { INextApiData } from '@/constants/api';
+import { insertInfo } from '@/dao/info';
+import { IPostAddInfoReq } from '@/constants/info';
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<INextApiData>
 ) {
-  console.log('==>', res);
-  res.status(200).json({ code: 1, message: '12', data: '' });
+  const data = req.body as unknown as IPostAddInfoReq;
+  const newInfo = await insertInfo(data);
+  res.status(200).json({ code: 0, message: '', data: newInfo });
 }
