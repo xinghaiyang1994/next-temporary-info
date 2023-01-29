@@ -6,7 +6,9 @@
     "check": "node scripts/checkInfoFile.js",
     "dev": "npm run check && cross-env STAGE=local next dev -p 3200",
     "build": "cross-env STAGE=prod next build",
-    "start": "npm run check &&  cross-env STAGE=prod next start -p 3200",
+    "start": "npm run check && cross-env STAGE=prod next start -p 3200",
+    "deploy": "pm2 start npm --name info -- run start",
+    "delete": "pm2 delete info",
     "lint": "next lint"
   },
   "dependencies": {
