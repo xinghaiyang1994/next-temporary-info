@@ -1,6 +1,7 @@
 import { DatePickerProps } from 'antd';
 /** 单条信息 */
 export interface IInfo {
+  id: number;
   /** 标题 */
   title: string;
   /** 内容 */
@@ -17,5 +18,9 @@ export interface ICreateForm extends Pick<IInfo, 'title' | 'content'> {
 export interface IPostAddInfoReq
   extends Pick<ICreateForm, 'title' | 'content' | 'verifyCode'> {
   /** 过期时间(时间戳) */
-  expiration?: number;
+  expirationTime?: number;
+}
+
+export interface IGetInfoListReq {
+  current: number;
 }

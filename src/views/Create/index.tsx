@@ -35,7 +35,7 @@ const Create: React.FC = () => {
       };
 
       if (values.expiration) {
-        reqData.expiration = values.expiration.valueOf();
+        reqData.expirationTime = values.expiration.valueOf();
       }
       run(reqData);
     } catch (error) {
@@ -108,7 +108,7 @@ const Create: React.FC = () => {
   return (
     <div className={styles['create']}>
       <div className={styles['create_header']}>
-        <h2 className={styles['create_header_title']}>生成信息</h2>
+        <h2>生成信息</h2>
         <Button type="primary" onClick={() => router.push(ERoute.Index)}>
           返回信息列表页
         </Button>

@@ -2,4 +2,5 @@
 export enum ERoute {
   /** 首页(信息列表) */
   Index = '/',
+  Create = '/create',
 }
