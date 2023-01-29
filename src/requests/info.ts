@@ -12,3 +12,6 @@ export const getInfoList = (data: IGetInfoListReq) =>
   api.get<IList<IInfo>>('/info/list', {
     params: data,
   });
+
+/** 获取验证码的链接 */
+export const getVerifyCodeImg = () => `/api/info/verifyCode?t=${Date.now()}`;

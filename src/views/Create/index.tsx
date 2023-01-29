@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, DatePicker, Form, Input, message } from 'antd';
 import { useRequest } from 'ahooks';
 import { useRouter } from 'next/router';
 
 import { ICreateForm, IPostAddInfoReq } from '@/constants/info';
-import { postAddInfo } from '@/requests/info';
+import { postAddInfo, getVerifyCodeImg } from '@/requests/info';
 import { ERoute } from '@/constants/routes';
 
 import styles from './index.module.less';
@@ -15,6 +15,7 @@ const { TextArea } = Input;
 const Create: React.FC = () => {
   const router = useRouter();
   const [form] = Form.useForm<ICreateForm>();
+  const [verifyCodeImg, setVerifyCodeImg] = useState(getVerifyCodeImg());
 
   const { loading, run } = useRequest(postAddInfo, {
     manual: true,
@@ -89,7 +90,8 @@ const Create: React.FC = () => {
           <Input className={styles['create_verify_input']} />
           <img
             className={styles['create_verify_img']}
-            src="https://aicmarketplace.oss-cn-beijing.aliyuncs.com/public/test_fe/music_bg.jpeg"
+            src={verifyCodeImg}
+            onClick={() => setVerifyCodeImg(getVerifyCodeImg())}
             alt=""
           />
         </div>

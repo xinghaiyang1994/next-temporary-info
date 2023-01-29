@@ -33,3 +33,6 @@ export const PAGE_SIZE = 10;
 
 /** 永久不过期的过期时间 */
 export const EXPIRATION_TIME_PERMANENT = 9999999999999;
+
+/** 验证码的 cookie 名, 后面需要改成 session */
+export const VERIFY_CODE_COOKIE_NAME = 'VERIFY_CODE_COOKIE_NAME';
